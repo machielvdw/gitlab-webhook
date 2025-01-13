@@ -45,4 +45,8 @@ lt --port 3000 --subdomain your_subdomain_here
 6. Select the events you want to listen for
 7. Click on "Add webhook"
 
+## Test
+1. Create a new issue in your project/run a test from the test selector after webhook setup
+2. Check the console for the payload
+
 
