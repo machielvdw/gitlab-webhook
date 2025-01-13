@@ -10,15 +10,13 @@ app.use(express.json());
 app.post('/webhook', (req, res) => {
   const gitlabToken = req.headers['x-gitlab-token'];
 
-  // Respond immediately to avoid timeout
   if (WEBHOOK_SECRET && gitlabToken !== WEBHOOK_SECRET) {
     console.log('Secret token mismatch. Unauthorized request.');
     return res.status(401).send('Unauthorized');
   }
 
-  res.status(200).send('OK'); // Send response immediately
+  res.status(200).send('OK');
 
-  // Process payload after response
   const gitlabEvent = req.headers['x-gitlab-event'];
   const payload = req.body;
 
